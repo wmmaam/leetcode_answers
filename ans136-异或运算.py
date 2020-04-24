@@ -28,7 +28,17 @@ class Solution:
                 if n not in nums[i + 1:] and n not in nums[:i]:
                     return n
 
+    '''
+    执行用时 :44 ms, 在所有 Python3 提交中击败了84.11%的用户
+    内存消耗 :15.4 MB, 在所有 Python3 提交中击败了5.26%的用户
+    '''
+    def singleNumber2(self, nums: list) -> int:
+        ans=nums[0]
+        for i in range(1,len(nums)):
+            ans=ans^nums[i]
+        return ans
+            
 
 sol = Solution()
-print(sol.singleNumber([2, 2, 1]))
-print(sol.singleNumber([4, 1, 2, 1, 2]))
+print(sol.singleNumber2([2, 2, 1]))
+print(sol.singleNumber2([4, 1, 2, 1, 2]))
